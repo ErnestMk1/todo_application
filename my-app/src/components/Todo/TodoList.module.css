@@ -1,0 +1,10 @@
+.todo_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo_list {
+  min-width: 30%;
+  list-style: none;
+}
