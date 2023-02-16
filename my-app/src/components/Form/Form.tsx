@@ -15,36 +15,44 @@ const Form = ({ todos, setTodos, inputData, setInputData, setStatus }: FormParam
     e.preventDefault();
     setInputData(e.target.value);
   };
+
   const submitHandler = (e: any) => {
     e.preventDefault();
-    setTodos([
-      ...todos,
-      {
-        task: inputData,
-        completed: false,
-        id: uuid(),
-      }
-    ]);
+    if (inputData !== '') {
+      setTodos([
+        ...todos,
+        {
+          task: inputData,
+          completed: false,
+          id: uuid(),
+        }
+      ]);
+    } else {
+      alert('Fill in the task form!');
+    }
+
     setInputData('');
   };
 
   return (
     <div className={css.main_div}>
-      <form>
-        <input
-          type="text"
-          value={inputData}
-          placeholder="Type in your task...)"
-          onChange={inputHandler}
-          className={css.todo_input}
-        />
-        <button
-          type="submit"
-          onClick={submitHandler}
-          className={css.todo_button}
-        >
-          <i className="fas fa-plus-square">
-        </i></button>
+      <form className={css.form}>
+        <div className={css.input_block}>
+          <input
+            type="text"
+            value={inputData}
+            placeholder="Type in your task...)"
+            onChange={inputHandler}
+            className={css.todo_input}
+          />
+          <button
+            type="submit"
+            onClick={submitHandler}
+            className={css.todo_button}
+          >
+            <i className="fas fa-plus-square"></i>
+          </button>
+        </div>
 
         <div className={css.select}>
           <select

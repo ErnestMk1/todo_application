@@ -18,3 +18,14 @@ header {
   justify-content: center;
   align-items: center;
 }
+
+@media (orientation: portrait) and (min-width: 310px) and (max-width: 450px) {
+  .main_div {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15vh;
+  }
+}

@@ -5,11 +5,21 @@ form {
   align-items: center;
 }
 
-form input, form button {
-  padding: 0.5rem;
-  font-size: 2rem;
+.input_block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo_input, .todo_button {
+  padding: .5rem;
+  font-size: 1.8rem;
   border: none;
   background: white;
+}
+
+.todo_input:focus {
+  outline-style: none;
 }
 
 form button {
@@ -61,4 +71,29 @@ select {
   background: #ff6f47;
   cursor: pointer;
   pointer-events: none;
+}
+
+@media (orientation: portrait) and (min-width: 310px) and (max-width: 450px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input_block {
+    width: 8vw;
+  }
+
+  .todo_input {
+    width: 65vw;
+  }
+
+  .todo_input, .todo_button {
+    font-size: 1.5rem;
+  }
+
+  .select {
+    width: 28vw;
+  }
 }
